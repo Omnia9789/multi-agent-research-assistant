@@ -1,0 +1,101 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', monospace">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#0a0e14"/>
+    </linearGradient>
+    <linearGradient id="headerGrad3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a1f2e"/>
+      <stop offset="100%" stop-color="#141824"/>
+    </linearGradient>
+    <linearGradient id="warnGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#450a0a"/>
+      <stop offset="100%" stop-color="#3b0808"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#bg3)"/>
+  <pattern id="grid3" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.15" opacity="0.06"/>
+  </pattern>
+  <rect width="1200" height="600" fill="url(#grid3)"/>
+
+  <rect x="40" y="20" width="1120" height="565" rx="12" fill="#111418" stroke="#2a2f3e" stroke-width="1.5"/>
+  <rect x="40" y="20" width="1120" height="44" rx="12" fill="url(#headerGrad3)"/>
+  <rect x="40" y="52" width="1120" height="12" fill="url(#headerGrad3)"/>
+  <circle cx="72" cy="42" r="7" fill="#ff5f56"/>
+  <circle cx="96" cy="42" r="7" fill="#ffbd2e"/>
+  <circle cx="120" cy="42" r="7" fill="#27c93f"/>
+  <text x="600" y="47" fill="#6b7280" font-size="13" text-anchor="middle" letter-spacing="1">zsh - multi-agent-research-assistant</text>
+
+  <rect x="70" y="80" width="680" height="52" rx="6" fill="#0f1520" stroke="#1e3a5f" stroke-width="1.2"/>
+  <text x="88" y="100" fill="#22d3ee" font-size="12" font-weight="bold">Multi-Agent Research Assistant</text>
+  <text x="88" y="120" fill="#6b7280" font-size="11">LangGraph  LlamaIndex  Anthropic Claude</text>
+
+  <text x="70" y="158" fill="#4b5563" font-size="12">$</text>
+  <text x="85" y="158" fill="#94a3b8" font-size="12">python main.py "When was the Eiffel Tower built on Mars and who were the alien architects?"</text>
+
+  <text x="70" y="182" fill="#f59e0b" font-size="12" font-weight="bold">Query:</text>
+  <text x="130" y="182" fill="#e2e8f0" font-size="12">When was the Eiffel Tower built on Mars and who were the alien architects?</text>
+
+  <line x1="70" y1="200" x2="1130" y2="200" stroke="#1e293b" stroke-width="1"/>
+
+  <text x="70" y="222" fill="#6b7280" font-size="11">[RetrieverAgent]  Searching for: 'Eiffel Tower Mars alien architects'</text>
+  <text x="70" y="240" fill="#6b7280" font-size="11">[RetrieverAgent]  Retrieved 2 chunk(s). Low relevance scores detected.</text>
+  <text x="70" y="258" fill="#6b7280" font-size="11">[ReasoningAgent]  Synthesizing 2 chunk(s).</text>
+  <text x="70" y="276" fill="#6b7280" font-size="11">[ReasoningAgent]  Synthesis complete. NOTE: context coverage low.</text>
+  <text x="70" y="294" fill="#6b7280" font-size="11">[FactCheckAgent]  Evaluating answer reliability.</text>
+  <text x="70" y="312" fill="#ef4444" font-size="11">[FactCheckAgent]  Verdict: FAIL | Confidence: 23% | Flagged: True</text>
+  <text x="70" y="330" fill="#6b7280" font-size="11">[OutputAgent]     Final answer assembled with warning annotations.</text>
+
+  <line x1="70" y1="348" x2="1130" y2="348" stroke="#1e293b" stroke-width="1"/>
+
+  <text x="70" y="372" fill="#22d3ee" font-size="15" font-weight="bold">Research Report</text>
+
+  <text x="70" y="396" fill="#e2e8f0" font-size="13" font-weight="bold">## Eiffel Tower Origins</text>
+  <text x="70" y="414" fill="#94a3b8" font-size="12">The Eiffel Tower was constructed in Paris, France between 1887 and 1889 as the entrance arch for</text>
+  <text x="70" y="430" fill="#94a3b8" font-size="12">the 1889 World Fair. It was designed by Gustave Eiffel's engineering company. The premise of the</text>
+  <text x="70" y="446" fill="#94a3b8" font-size="12">query contains factual errors: the Eiffel Tower is not on Mars and was not built by aliens.</text>
+
+  <line x1="70" y1="466" x2="1130" y2="466" stroke="#1e293b" stroke-width="1"/>
+
+  <rect x="70" y="478" width="1060" height="88" rx="8" fill="url(#warnGrad)" stroke="#f43f5e" stroke-width="1.5"/>
+  <text x="90" y="503" fill="#fca5a5" font-size="14" font-weight="bold">Fact-Check: FLAGGED</text>
+  <text x="90" y="522" fill="#ef4444" font-size="12">The query contains false premises. This answer is based on limited evidence and may be unreliable.</text>
+  <text x="90" y="540" fill="#6b7280" font-size="11">Issues: Query premise is factually incorrect  |  Low source relevance  |  Speculative content detected</text>
+  <text x="90" y="556" fill="#6b7280" font-size="11">Confidence: 23%  |  Recommend: Verify against authoritative sources before use</text>
+
+  <rect x="820" y="80" width="310" height="370" rx="8" fill="#0d1420" stroke="#1e293b" stroke-width="1"/>
+  <text x="975" y="105" fill="#6b7280" font-size="11" text-anchor="middle" letter-spacing="2">CONFIDENCE BREAKDOWN</text>
+
+  <text x="870" y="132" fill="#94a3b8" font-size="11">Source Relevance</text>
+  <rect x="870" y="140" width="220" height="10" rx="5" fill="#1e293b"/>
+  <rect x="870" y="140" width="40" height="10" rx="5" fill="#ef4444"/>
+  <text x="1100" y="150" fill="#ef4444" font-size="10" text-anchor="end">18%</text>
+
+  <text x="870" y="172" fill="#94a3b8" font-size="11">Claim Grounding</text>
+  <rect x="870" y="180" width="220" height="10" rx="5" fill="#1e293b"/>
+  <rect x="870" y="180" width="30" height="10" rx="5" fill="#ef4444"/>
+  <text x="1100" y="190" fill="#ef4444" font-size="10" text-anchor="end">14%</text>
+
+  <text x="870" y="212" fill="#94a3b8" font-size="11">Factual Accuracy</text>
+  <rect x="870" y="220" width="220" height="10" rx="5" fill="#1e293b"/>
+  <rect x="870" y="220" width="80" height="10" rx="5" fill="#f59e0b"/>
+  <text x="1100" y="230" fill="#f59e0b" font-size="10" text-anchor="end">37%</text>
+
+  <text x="870" y="252" fill="#94a3b8" font-size="11">Context Coverage</text>
+  <rect x="870" y="260" width="220" height="10" rx="5" fill="#1e293b"/>
+  <rect x="870" y="260" width="45" height="10" rx="5" fill="#ef4444"/>
+  <text x="1100" y="270" fill="#ef4444" font-size="10" text-anchor="end">20%</text>
+
+  <line x1="840" y1="292" x2="1110" y2="292" stroke="#1e293b" stroke-width="1"/>
+
+  <text x="975" y="320" fill="#f43f5e" font-size="28" text-anchor="middle" font-weight="bold">23%</text>
+  <text x="975" y="342" fill="#6b7280" font-size="11" text-anchor="middle">Overall Confidence</text>
+
+  <rect x="900" y="358" width="150" height="30" rx="15" fill="#7f1d1d" stroke="#f43f5e" stroke-width="1.5"/>
+  <text x="975" y="378" fill="#fca5a5" font-size="13" text-anchor="middle" font-weight="bold">FLAGGED</text>
+
+  <text x="975" y="415" fill="#4b5563" font-size="10" text-anchor="middle">Threshold: 0.60 for PASS</text>
+  <text x="975" y="432" fill="#4b5563" font-size="10" text-anchor="middle">Below 0.60: Warning annotations</text>
+</svg>

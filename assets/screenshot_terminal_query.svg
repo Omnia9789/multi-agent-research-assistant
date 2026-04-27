@@ -1,0 +1,162 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#0a0e14"/>
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a1f2e"/>
+      <stop offset="100%" stop-color="#141824"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  
+  <!-- Subtle grid -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.15" opacity="0.08"/>
+  </pattern>
+  <rect width="1200" height="720" fill="url(#grid)"/>
+
+  <!-- Terminal window -->
+  <rect x="40" y="30" width="1120" height="660" rx="12" fill="#111418" stroke="#2a2f3e" stroke-width="1.5"/>
+  
+  <!-- Title bar -->
+  <rect x="40" y="30" width="1120" height="44" rx="12" fill="url(#headerGrad)"/>
+  <rect x="40" y="62" width="1120" height="12" fill="url(#headerGrad)"/>
+  
+  <!-- Traffic lights -->
+  <circle cx="72" cy="52" r="7" fill="#ff5f56"/>
+  <circle cx="96" cy="52" r="7" fill="#ffbd2e"/>
+  <circle cx="120" cy="52" r="7" fill="#27c93f"/>
+  
+  <!-- Window title -->
+  <text x="600" y="57" fill="#6b7280" font-size="13" text-anchor="middle" letter-spacing="1">zsh — multi-agent-research-assistant</text>
+
+  <!-- Banner box -->
+  <rect x="70" y="95" width="700" height="58" rx="6" fill="#0f1520" stroke="#1e3a5f" stroke-width="1.2"/>
+  <text x="88" y="119" fill="#22d3ee" font-size="13" font-weight="bold">╔══════════════════════════════════════════════════════════╗</text>
+  <text x="88" y="136" fill="#22d3ee" font-size="13">║  🔬 <tspan fill="#e2e8f0" font-weight="bold">Multi-Agent Research Assistant</tspan>  <tspan fill="#6b7280">LangGraph · LlamaIndex</tspan>  ║</text>
+
+  <!-- Prompt and query -->
+  <text x="70" y="178" fill="#4b5563" font-size="12">$</text>
+  <text x="85" y="178" fill="#94a3b8" font-size="12">python main.py </text>
+  <text x="230" y="178" fill="#fbbf24" font-size="12">"What is Retrieval-Augmented Generation and how does it reduce hallucinations?"</text>
+
+  <text x="70" y="202" fill="#f59e0b" font-size="12" font-weight="bold">Query:</text>
+  <text x="130" y="202" fill="#e2e8f0" font-size="12">What is Retrieval-Augmented Generation and how does it reduce hallucinations?</text>
+
+  <!-- Running status -->
+  <rect x="70" y="214" width="480" height="22" rx="4" fill="#0c1a0c"/>
+  <circle cx="86" cy="225" r="5" fill="#22c55e">
+    <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <text x="98" y="229" fill="#22c55e" font-size="11">Running multi-agent pipeline...</text>
+
+  <line x1="70" y1="248" x2="1130" y2="248" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Agent logs -->
+  <text x="70" y="272" fill="#6b7280" font-size="11">[RetrieverAgent]  Searching for: 'What is Retrieval-Augmented Generation...'</text>
+  <text x="70" y="290" fill="#6b7280" font-size="11">[RetrieverAgent]  Retrieved 5 chunk(s) from ai_overview.md, hallucination_detection.md</text>
+  <text x="70" y="308" fill="#6b7280" font-size="11">[ReasoningAgent]  Synthesizing 5 chunk(s).</text>
+  <text x="70" y="326" fill="#6b7280" font-size="11">[ReasoningAgent]  Synthesis complete.</text>
+  <text x="70" y="344" fill="#6b7280" font-size="11">[FactCheckAgent]  Evaluating answer reliability.</text>
+  <text x="70" y="362" fill="#6b7280" font-size="11">[FactCheckAgent]  Verdict: PASS | Confidence: 91% | Flagged: False</text>
+  <text x="70" y="380" fill="#6b7280" font-size="11">[OutputAgent]     Final answer assembled.</text>
+
+  <line x1="70" y1="396" x2="1130" y2="396" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Report heading -->
+  <text x="70" y="420" fill="#22d3ee" font-size="15" font-weight="bold">📋  Research Report</text>
+
+  <!-- Answer content -->
+  <text x="70" y="448" fill="#e2e8f0" font-size="13" font-weight="bold">## Retrieval-Augmented Generation (RAG)</text>
+  <text x="70" y="468" fill="#94a3b8" font-size="12">RAG is a technique that combines parametric LLM knowledge with non-parametric retrieval from external</text>
+  <text x="70" y="484" fill="#94a3b8" font-size="12">knowledge bases. Instead of relying solely on weights encoded during training, the model receives</text>
+  <text x="70" y="500" fill="#94a3b8" font-size="12">relevant document chunks at inference time, grounding its response in verifiable evidence.</text>
+
+  <text x="70" y="524" fill="#e2e8f0" font-size="12" font-weight="bold">### How it Reduces Hallucination</text>
+  <text x="82" y="544" fill="#94a3b8" font-size="12">• <tspan fill="#22d3ee">Query encoding</tspan>: The user query is embedded into a vector space.</text>
+  <text x="82" y="560" fill="#94a3b8" font-size="12">• <tspan fill="#22d3ee">Semantic retrieval</tspan>: Top-k most similar document chunks are fetched from a vector store.</text>
+  <text x="82" y="576" fill="#94a3b8" font-size="12">• <tspan fill="#22d3ee">Context injection</tspan>: Retrieved text is injected into the prompt as grounding context.</text>
+  <text x="82" y="592" fill="#94a3b8" font-size="12">• <tspan fill="#22d3ee">Grounded generation</tspan>: The LLM generates answers constrained by the retrieved evidence.</text>
+
+  <line x1="70" y1="612" x2="1130" y2="612" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Fact check footer -->
+  <text x="70" y="636" fill="#22c55e" font-size="13">✅  Fact-Check: </text>
+  <rect x="181" y="622" width="52" height="20" rx="4" fill="#14532d"/>
+  <text x="207" y="636" fill="#4ade80" font-size="12" text-anchor="middle" font-weight="bold">PASSED</text>
+  <text x="248" y="636" fill="#6b7280" font-size="13">  |  Confidence:</text>
+  <text x="366" y="636" fill="#22d3ee" font-size="13" font-weight="bold">91%</text>
+
+  <!-- Right panel — agent flow diagram -->
+  <rect x="810" y="95" width="320" height="460" rx="8" fill="#0d1420" stroke="#1e293b" stroke-width="1"/>
+  <text x="970" y="118" fill="#6b7280" font-size="11" text-anchor="middle" letter-spacing="2">AGENT PIPELINE</text>
+
+  <!-- Node: Query -->
+  <rect x="860" y="130" width="220" height="36" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="970" y="153" fill="#93c5fd" font-size="12" text-anchor="middle">🔍  Query Input</text>
+
+  <!-- Arrow -->
+  <line x1="970" y1="166" x2="970" y2="188" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arr)"/>
+  <polygon points="964,185 970,196 976,185" fill="#3b82f6"/>
+
+  <!-- Node: Retrieval -->
+  <rect x="860" y="196" width="220" height="46" rx="6" fill="#1a2e1a" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="970" y="216" fill="#86efac" font-size="12" text-anchor="middle" font-weight="bold">Retrieval Agent</text>
+  <text x="970" y="233" fill="#4b5563" font-size="10" text-anchor="middle">LlamaIndex · VectorStoreIndex</text>
+
+  <polygon points="964,246 970,257 976,246" fill="#22c55e"/>
+  <line x1="970" y1="242" x2="970" y2="255" stroke="#22c55e" stroke-width="1.5"/>
+
+  <!-- Node: Reasoning -->
+  <rect x="860" y="257" width="220" height="46" rx="6" fill="#2a1a0a" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="970" y="277" fill="#fde68a" font-size="12" text-anchor="middle" font-weight="bold">Reasoning Agent</text>
+  <text x="970" y="294" fill="#4b5563" font-size="10" text-anchor="middle">Synthesis · Context grounding</text>
+
+  <polygon points="964,307 970,318 976,307" fill="#f59e0b"/>
+  <line x1="970" y1="303" x2="970" y2="316" stroke="#f59e0b" stroke-width="1.5"/>
+
+  <!-- Node: Fact-Check -->
+  <rect x="860" y="318" width="220" height="46" rx="6" fill="#2a0a0a" stroke="#f43f5e" stroke-width="1.5"/>
+  <text x="970" y="338" fill="#fca5a5" font-size="12" text-anchor="middle" font-weight="bold">Fact-Check Agent</text>
+  <text x="970" y="355" fill="#4b5563" font-size="10" text-anchor="middle">Hallucination detection · Scoring</text>
+
+  <polygon points="964,368 970,379 976,368" fill="#f43f5e"/>
+  <line x1="970" y1="364" x2="970" y2="377" stroke="#f43f5e" stroke-width="1.5"/>
+
+  <!-- Node: Output -->
+  <rect x="860" y="379" width="220" height="46" rx="6" fill="#1a1a2e" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="970" y="399" fill="#d8b4fe" font-size="12" text-anchor="middle" font-weight="bold">Output Agent</text>
+  <text x="970" y="416" fill="#4b5563" font-size="10" text-anchor="middle">Final answer · Annotations</text>
+
+  <polygon points="964,429 970,440 976,429" fill="#a855f7"/>
+  <line x1="970" y1="425" x2="970" y2="438" stroke="#a855f7" stroke-width="1.5"/>
+
+  <!-- Node: END -->
+  <rect x="900" y="440" width="140" height="30" rx="15" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="970" y="460" fill="#94a3b8" font-size="11" text-anchor="middle">◼  END</text>
+
+  <!-- Stats row -->
+  <rect x="860" y="490" width="65" height="48" rx="6" fill="#0f1520" stroke="#1e293b" stroke-width="1"/>
+  <text x="892" y="510" fill="#22d3ee" font-size="16" text-anchor="middle" font-weight="bold">5</text>
+  <text x="892" y="526" fill="#4b5563" font-size="9" text-anchor="middle">CHUNKS</text>
+
+  <rect x="937" y="490" width="65" height="48" rx="6" fill="#0f1520" stroke="#1e293b" stroke-width="1"/>
+  <text x="969" y="510" fill="#22c55e" font-size="16" text-anchor="middle" font-weight="bold">91%</text>
+  <text x="969" y="526" fill="#4b5563" font-size="9" text-anchor="middle">CONFIDENCE</text>
+
+  <rect x="1014" y="490" width="65" height="48" rx="6" fill="#0f1520" stroke="#1e293b" stroke-width="1"/>
+  <text x="1046" y="510" fill="#4ade80" font-size="16" text-anchor="middle" font-weight="bold">✓</text>
+  <text x="1046" y="526" fill="#4b5563" font-size="9" text-anchor="middle">VERIFIED</text>
+</svg>
